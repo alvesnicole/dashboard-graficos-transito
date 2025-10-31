@@ -1,7 +1,6 @@
 {
   "meta": {
-    "fonte": "Departamento de Trânsito - 2023",
-    "atualizadoEm": "2023-11-15T14:30:00Z"
+    "fonte": "Pesquisa de campo em Iporá (GO) - 2025"
   },
   "ocorrenciasPorHorario": [
     { "hora": 0, "numeroDeAcidentes": 7 },
@@ -30,3 +29,4 @@
     { "hora": 23, "numeroDeAcidentes": 18 }
   ]
 }
+
