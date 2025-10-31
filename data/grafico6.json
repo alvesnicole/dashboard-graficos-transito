@@ -1,7 +1,6 @@
 {
   "meta": {
-    "fonte": "Departamento de Trânsito - 2023 e 2024",
-    "atualizadoEm": "2023-11-15T14:30:00Z"
+    "fonte": "Pesquisa de campo em Iporá (GO) - 2025"
   },
   "frequenciaPorMesEAno": {
     "labels": ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"],
@@ -19,3 +18,4 @@
     ]
   }
 }
+
