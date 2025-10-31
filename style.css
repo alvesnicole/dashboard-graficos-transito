@@ -1,0 +1,340 @@
+:root {
+  --bg: #121212;
+  --panel: #1e1e1e;
+  --accent: #64ffda;
+  --muted: #bbb;
+  --radius: 12px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--muted);
+  overflow-x: hidden;
+  height: auto;
+  height: auto;
+  overflow-y: auto; /* SCROLL GERAL NO BODY */
+}
+
+/* Cabeçalho fixo */
+header {
+  background: #181818;
+  padding: 20px 65px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: left;
+  color: var(--accent);
+}
+
+/* Bloco de introdução aprimorado */
+.intro-block {
+  background: #1a1a1a;
+  color: #ddd;
+  padding: 50px 80px;
+  margin: 50px auto;
+  border-radius: 18px;
+  max-width: 1100px;
+  line-height: 1.8;
+  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 1.08rem;
+  text-align: justify;
+}
+
+.intro-block h2 {
+  text-align: center;
+  color: var(--accent);
+  font-size: 1.8rem;
+  margin-bottom: 28px;
+  letter-spacing: 0.5px;
+}
+
+.intro-block p {
+  margin-bottom: 18px;
+}
+
+.intro-block .highlight {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* Ajuste sutil de destaque ao passar o mouse */
+.intro-block:hover {
+  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.45);
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
+
+
+/* Página individual */
+#dashboardContainer {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+  min-height: 100vh; /* Ocupa toda a viewport */
+}
+
+/* Páginas com altura automática e padding inferior */
+.page {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  height: auto; /* Alterado de 100vh para auto */
+  min-height: 100vh; /* Garante altura mínima */ /* Altura total da viewport */
+  opacity: 0;
+  transition: all 0.8s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px 0; /* Espaço para respiro */
+}
+
+.page main {
+  display: flex;
+  gap: 20px;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex: 0 0 auto; /* Não cresce, altura baseada no conteúdo */
+  min-height: auto;
+}
+
+
+.page.active {
+  left: 0;
+  opacity: 1;
+  position: relative;
+}
+
+.page-header {
+  text-align: center;
+  padding: 20px;
+}
+
+/* Scroll minimalista */
+.page::-webkit-scrollbar {
+  width: 8px;
+}
+
+.page::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.page::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 4px;
+}
+
+.page::-webkit-scrollbar-thumb:hover {
+  background: #777;
+}
+
+/* Firefox */
+.page {
+  scrollbar-width: thin;
+  scrollbar-color: #555 transparent;
+}
+main {
+  display: flex;
+  gap: 20px;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex: 1;
+}
+
+.panel {
+  width: 260px;
+  background: var(--panel);
+  padding: 16px;
+  border-radius: var(--radius);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.control-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  color: #ddd;
+}
+
+.control-row select,
+.control-row button {
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  background: #222;
+  color: #eee;
+  cursor: pointer;
+}
+
+.chart-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 500px; /* Altura mínima */
+}
+
+
+.chart-wrap {
+  background: var(--panel);
+  padding: 20px;
+  border-radius: var(--radius);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  height: 450px; /* Altura fixa */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0; /* Não reduz altura */
+}
+
+.chart-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px; /* espaço entre título e gráfico */
+  background: rgba(255,255,255,0.05);
+  border-radius: 12px;
+  padding: 30px 30px;
+  width: 70%;
+  box-sizing: border-box;
+}
+
+canvas {
+  max-width: 100% !important;
+  height: 420px !important;
+}
+
+.legend-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 12px;
+  color: #ccc;
+  width: 100%;
+  padding: 16px;
+  background: #1b1b1b;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.page footer {
+  margin-top: auto; /* Empurra para baixo */
+  padding: 20px;
+  text-align: center;
+  color: #888;
+  width: 100%;
+}
+
+footer {
+  padding: 12px;
+  text-align: center;
+  color: #888;
+}
+
+/* Botões de navegação */
+.nav-btn {
+  position: absolute ;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--accent);
+  color: #000;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  font-size: 1.8rem;
+  transition: 0.3s;
+  z-index: 100; /* Aumentado para ficar acima de tudo */
+}
+
+
+.nav-btn:hover {
+  background: #fff;
+}
+
+.nav-btn.left {
+  left: 20px;
+}
+
+.nav-btn.right {
+  right: 20px;
+}
+
+/* Estados de carregamento e erro */
+.loading-state {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #64ffda;
+  font-size: 16px;
+}
+
+.error-state {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #FF6B6B;
+  font-size: 14px;
+}
+
+/* Melhorias para evitar flickering */
+.chartCanvas {
+  transition: opacity 0.3s ease;
+}
+
+.chartCanvas.loading {
+  opacity: 0.7;
+}
+
+/* garante que chart-block seja referência para posicionamento absoluto */
+.chart-block {
+  position: relative; /* se já existir, essa regra não causa conflito */
+}
+
+/* quando as setas estiverem dentro do chart-block elas usarão esse posicionamento */
+.chart-block .nav-btn {
+  position: absolute !important;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 200;
+  width: 48px;
+  height: 48px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+}
+
+/* deslocamento lateral para ficarem ligeiramente fora do bloco (ajuste conforme desejar) */
+.chart-block .nav-btn.left {
+  left: -28px; /* seta esquerda fica um pouco fora do bloco */
+}
+
+.chart-block .nav-btn.right {
+  right: -28px; /* seta direita fica um pouco fora do bloco */
+}
+
+/* pequena adaptação para telas pequenas: posiciona as setas junto ao rodapé do chart-block */
+@media (max-width: 800px) {
+  .chart-block .nav-btn {
+    top: auto;
+    bottom: 12px;
+    transform: none;
+    width: 42px;
+    height: 42px;
+  }
+  .chart-block .nav-btn.left { left: 12px; }
+  .chart-block .nav-btn.right { right: 12px; }
+}

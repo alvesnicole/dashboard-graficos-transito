@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dashboard — Acidentes</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
+</head>
+<body>
+<header>
+  <div class="header-content">
+    <h1>Tecnologia e Educação para um Trânsito Mais Seguro</h1>
+  </div>
+</header>
+
+
+<section class="intro-block">
+  <p>
+    O <span class="highlight">Projeto de Extensão: Tecnologia e Educação para um Trânsito Mais Seguro</span> tem como propósito analisar e visualizar dados referentes a acidentes de trânsito ocorridos no município de Iporá.
+  </p>
+  <p>
+    A base de informações é composta pelos registros de atendimento do <span class="highlight">Serviço de Atendimento Móvel de Urgência (SAMU)</span> referentes aos anos de 2023 e 2024. Esses dados representam apenas parte dos acidentes, uma vez que contemplam exclusivamente as ocorrências atendidas por esse serviço, não incluindo registros de órgãos como o Corpo de Bombeiros ou a Polícia Rodoviária.
+  </p>
+  <p>
+    Por meio deste <span class="highlight">dashboard interativo</span>, é possível transformar dados brutos em informações acessíveis e objetivas, contribuindo para uma compreensão mais clara dos fatores associados aos acidentes e promovendo o debate sobre a <span class="highlight">segurança viária</span> na comunidade.
+  </p>
+</section>
+
+  
+  <div id="dashboardContainer">
+    <!-- Página 1: Acidentes por Faixa Etária -->
+    <div class="page active" data-chart="grafico1">
+      <div class="chart-block">
+        <div class="page-header">
+          <h1>Acidentes por Faixa Etária</h1>
+          <p>Distribuição dos acidentes conforme a faixa etária das vítimas.</p>
+        </div>
+        <main>
+          <aside class="panel">
+            <div class="control-row">
+              <label for="chartType">Tipo:</label>
+              <select class="chartType">
+                <option value="bar">Barras</option>
+                <option value="horizontalBar">Barras Horizontais</option>
+                <option value="pie">Pizza</option>
+                <option value="doughnut">Donut</option>
+                <option value="radar">Radar</option>
+              </select>
+            </div>
+            <div class="control-row">
+              <button class="toggleSortBtn">⇅ Ordenar</button>
+            </div>
+            <div class="control-row">
+              <label><input type="checkbox" class="normalizeChk" /> Mostrar % do total</label>
+            </div>
+          </aside>
+
+          <section class="chart-area">
+            <div class="chart-wrap">
+              <canvas class="chartCanvas"></canvas>
+            </div>
+            <div class="legend-container"></div>
+            <p class="metaInfo"></p>
+          </section>
+        </main>
+        <footer><small class="footerText">Fonte: —</small></footer>
+      </div>
+    </div>
+
+    <!-- Página 2: Acidentes por Gênero -->
+    <div class="page" data-chart="grafico2">
+      <div class="chart-block">
+        <div class="page-header">
+          <h1>Acidentes por Gênero</h1>
+          <p>Distribuição dos acidentes conforme o gênero das vítimas.</p>
+        </div>
+        <main>
+          <aside class="panel">
+            <div class="control-row">
+              <label for="chartType">Tipo:</label>
+              <select class="chartType">
+                <option value="bar">Barras</option>
+                <option value="horizontalBar">Barras Horizontais</option>
+                <option value="pie">Pizza</option>
+                <option value="doughnut">Donut</option>
+                <option value="radar">Radar</option>
+              </select>
+            </div>
+            <div class="control-row">
+              <button class="toggleSortBtn">⇅ Ordenar</button>
+            </div>
+            <div class="control-row">
+              <label><input type="checkbox" class="normalizeChk" /> Mostrar % do total</label>
+            </div>
+          </aside>
+
+          <section class="chart-area">
+            <div class="chart-wrap">
+              <canvas class="chartCanvas"></canvas>
+            </div>
+            <div class="legend-container"></div>
+            <p class="metaInfo"></p>
+          </section>
+        </main>
+        <footer><small class="footerText">Fonte: —</small></footer>
+      </div>
+    </div>
+
+    <!-- Página 3: Acidentes por Tipo -->
+    <div class="page" data-chart="grafico3">
+      <div class="chart-block">
+        <div class="page-header">
+          <h1>Acidentes por Tipo</h1>
+          <p>Distribuição dos acidentes conforme o tipo de ocorrência.</p>
+        </div>
+        <main>
+          <aside class="panel">
+            <div class="control-row">
+              <label for="chartType">Tipo:</label>
+              <select class="chartType">
+                <option value="bar">Barras</option>
+                <option value="horizontalBar">Barras Horizontais</option>
+                <option value="pie">Pizza</option>
+                <option value="doughnut">Donut</option>
+                <option value="radar">Radar</option>
+              </select>
+            </div>
+            <div class="control-row">
+              <button class="toggleSortBtn">⇅ Ordenar</button>
+            </div>
+            <div class="control-row">
+              <label><input type="checkbox" class="normalizeChk" /> Mostrar % do total</label>
+            </div>
+          </aside>
+
+          <section class="chart-area">
+            <div class="chart-wrap">
+              <canvas class="chartCanvas"></canvas>
+            </div>
+            <div class="legend-container"></div>
+            <p class="metaInfo"></p>
+          </section>
+        </main>
+        <footer><small class="footerText">Fonte: —</small></footer>
+      </div>
+    </div>
+
+    <!-- Página 4: Acidentes por Tipo -->
+    <div class="page" data-chart="grafico4">
+      <div class="chart-block">
+        <div class="page-header">
+          <h1>Acidentes por Tipo</h1>
+          <p>Distribuição dos acidentes conforme o tipo de ocorrência.</p>
+        </div>
+        <main>
+          <aside class="panel">
+            <div class="control-row">
+              <label for="chartType">Tipo:</label>
+              <select class="chartType">
+                <option value="bar">Barras</option>
+                <option value="horizontalBar">Barras Horizontais</option>
+                <option value="pie">Pizza</option>
+                <option value="doughnut">Donut</option>
+                <option value="radar">Radar</option>
+              </select>
+            </div>
+            <div class="control-row">
+              <button class="toggleSortBtn">⇅ Ordenar</button>
+            </div>
+            <div class="control-row">
+              <label><input type="checkbox" class="normalizeChk" /> Mostrar % do total</label>
+            </div>
+          </aside>
+
+          <section class="chart-area">
+            <div class="chart-wrap">
+              <canvas class="chartCanvas"></canvas>
+            </div>
+            <div class="legend-container"></div>
+            <p class="metaInfo"></p>
+          </section>
+        </main>
+        <footer><small class="footerText">Fonte: —</small></footer>
+      </div>
+    </div>
+
+    <!-- Página 5: Acidentes por Tipo -->
+    <div class="page" data-chart="grafico5">
+      <div class="chart-block">
+        <div class="page-header">
+          <h1>Acidentes por Tipo</h1>
+          <p>Distribuição dos acidentes conforme o tipo de ocorrência.</p>
+        </div>
+        <main>
+          <aside class="panel">
+            <div class="control-row">
+              <label for="chartType">Tipo:</label>
+              <select class="chartType">
+                <option value="bar">Barras</option>
+                <option value="horizontalBar">Barras Horizontais</option>
+                <option value="pie">Pizza</option>
+                <option value="doughnut">Donut</option>
+                <option value="radar">Radar</option>
+              </select>
+            </div>
+            <div class="control-row">
+              <button class="toggleSortBtn">⇅ Ordenar</button>
+            </div>
+            <div class="control-row">
+              <label><input type="checkbox" class="normalizeChk" /> Mostrar % do total</label>
+            </div>
+          </aside>
+
+          <section class="chart-area">
+            <div class="chart-wrap">
+              <canvas class="chartCanvas"></canvas>
+            </div>
+            <div class="legend-container"></div>
+            <p class="metaInfo"></p>
+          </section>
+        </main>
+        <footer><small class="footerText">Fonte: —</small></footer>
+      </div>
+    </div>
+
+    <!-- Página 6: Acidentes por Tipo -->
+    <div class="page" data-chart="grafico6">
+      <div class="chart-block">
+        <div class="page-header">
+          <h1>Acidentes por Tipo</h1>
+          <p>Distribuição dos acidentes conforme o tipo de ocorrência.</p>
+        </div>
+        <main>
+          <aside class="panel">
+            <div class="control-row">
+              <label for="chartType">Tipo:</label>
+              <select class="chartType">
+                <option value="bar">Barras</option>
+                <option value="horizontalBar">Barras Horizontais</option>
+                <option value="pie">Pizza</option>
+                <option value="doughnut">Donut</option>
+                <option value="radar">Radar</option>
+              </select>
+            </div>
+            <div class="control-row">
+              <button class="toggleSortBtn">⇅ Ordenar</button>
+            </div>
+            <div class="control-row">
+              <label><input type="checkbox" class="normalizeChk" /> Mostrar % do total</label>
+            </div>
+          </aside>
+
+          <section class="chart-area">
+            <div class="chart-wrap">
+              <canvas class="chartCanvas"></canvas>
+            </div>
+            <div class="legend-container"></div>
+            <p class="metaInfo"></p>
+          </section>
+        </main>
+        <footer><small class="footerText">Fonte: —</small></footer>
+      </div>
+    </div>
+  </div>
+
+  <!-- Botões de navegação FIXOS -->
+  <button class="nav-btn left" id="prevPage">❮</button>
+  <button class="nav-btn right" id="nextPage">❯</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
