@@ -1,7 +1,6 @@
 {
   "meta": {
-    "fonte": "Departamento de Trânsito - 2023",
-    "atualizadoEm": "2023-11-15T14:30:00Z"
+    "fonte": "Pesquisa de campo em Iporá (GO) - 2025"
   },
   "destinos": [
     { "destino": "Entregue no hospital", "valor": 412 },
@@ -14,4 +13,5 @@
     { "destino": "Em branco", "valor": 2 },
     { "destino": "Outros", "valor": 57 }
   ]
+
 }
