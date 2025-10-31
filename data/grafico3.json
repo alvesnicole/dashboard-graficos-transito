@@ -1,7 +1,6 @@
 {
   "meta": {
-    "fonte": "Departamento de Trânsito - 2023",
-    "atualizadoEm": "2023-11-15T14:30:00Z"
+    "fonte": "Pesquisa de campo em Iporá (GO) - 2025"
   },
   "tipos": [
     { "tipo": "Colisão moto", "valor": 228 },
@@ -12,4 +11,5 @@
     { "tipo": "Atropelamento carro", "valor": 5 },
     { "tipo": "Colisão genérica", "valor": 1 }
   ]
+
 }
