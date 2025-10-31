@@ -1,0 +1,15 @@
+{
+  "meta": {
+    "fonte": "Departamento de Trânsito - 2023",
+    "atualizadoEm": "2023-11-15T14:30:00Z"
+  },
+  "tipos": [
+    { "tipo": "Colisão moto", "valor": 228 },
+    { "tipo": "Acidente genérico", "valor": 148 },
+    { "tipo": "Colisão carro", "valor": 76 },
+    { "tipo": "Atropelamento genérico", "valor": 51 },
+    { "tipo": "Atropelamento moto", "valor": 6 },
+    { "tipo": "Atropelamento carro", "valor": 5 },
+    { "tipo": "Colisão genérica", "valor": 1 }
+  ]
+}

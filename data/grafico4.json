@@ -1,0 +1,17 @@
+{
+  "meta": {
+    "fonte": "Departamento de Trânsito - 2023",
+    "atualizadoEm": "2023-11-15T14:30:00Z"
+  },
+  "destinos": [
+    { "destino": "Entregue no hospital", "valor": 412 },
+    { "destino": "Recusou transporte", "valor": 13 },
+    { "destino": "Transporte por terceiros", "valor": 11 },
+    { "destino": "Óbito no local", "valor": 9 },
+    { "destino": "Recusou atendimento", "valor": 8 },
+    { "destino": "Vítima não localizada", "valor": 4 },
+    { "destino": "Realizado orientação", "valor": 2 },
+    { "destino": "Em branco", "valor": 2 },
+    { "destino": "Outros", "valor": 57 }
+  ]
+}

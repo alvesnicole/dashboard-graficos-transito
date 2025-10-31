@@ -1,0 +1,11 @@
+{
+  "meta": {
+    "fonte": "Departamento de Trânsito - 2023",
+    "atualizadoEm": "2023-11-15T14:30:00Z"
+  },
+  "sexo": [
+    { "sexo": "Masculino", "valor": 301 },
+    { "sexo": "Feminino", "valor": 193 },
+    { "sexo": "Não identificado", "valor": 21 }
+  ]
+}
