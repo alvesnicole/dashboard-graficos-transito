@@ -3,6 +3,18 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <!-- Inter -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<!-- Poppins -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<!-- Manrope -->
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<!-- Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<!-- Outfit -->
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <title>Dashboard — Acidentes</title>
   <link rel="stylesheet" href="style.css" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
@@ -11,17 +23,20 @@
 <body>
 <header>
   <div class="header-content">
-    <h1>Tecnologia e Educação para um Trânsito Mais Seguro</h1>
+    <h1>TECNOLOGIA E EDUCAÇÃO PARA UM TRÂNSITO MAIS SEGURO</h1>
   </div>
+  <a href="https://ifgoiano.edu.br/home/index.php" target="_blank" class="header-image">
+    <img src="imagens/logo_ipora.png" alt="IF Goiano">
+  </a>
 </header>
 
 
 <section class="intro-block">
   <p>
-    O <span class="highlight">Projeto de Extensão: Tecnologia e Educação para um Trânsito Mais Seguro</span> tem como propósito analisar e visualizar dados referentes a acidentes de trânsito ocorridos no município de Iporá.
+    O <span class="highlight"> O Projeto de Extensão: Tecnologia e Educação para um Trânsito Mais Seguro</span> foi desenvolvido por estudantes do sexto período do Bacharelado em Ciência da Computação do Instituto Federal Goiano – Campus Iporá, com o objetivo de analisar e visualizar dados sobre acidentes de trânsito ocorridos no município de Iporá.
   </p>
   <p>
-    A base de informações é composta pelos registros de atendimento do <span class="highlight">Serviço de Atendimento Móvel de Urgência (SAMU)</span> referentes aos anos de 2023 e 2024. Esses dados representam apenas parte dos acidentes, uma vez que contemplam exclusivamente as ocorrências atendidas por esse serviço, não incluindo registros de órgãos como o Corpo de Bombeiros ou a Polícia Rodoviária.
+    A base de informações é composta pelos registros de atendimento do <a href="https://www.gov.br/saude/pt-br/composicao/saes/samu-192" target="_blank"><span class="highlight">Serviço de Atendimento Móvel de Urgência (SAMU)</span></a> referentes aos anos de 2023 e 2024. Esses dados representam apenas parte dos acidentes, uma vez que contemplam exclusivamente as ocorrências atendidas por esse serviço, não incluindo registros de órgãos como o Corpo de Bombeiros ou a Polícia Rodoviária.
   </p>
   <p>
     Por meio deste <span class="highlight">dashboard interativo</span>, é possível transformar dados brutos em informações acessíveis e objetivas, contribuindo para uma compreensão mais clara dos fatores associados aos acidentes e promovendo o debate sobre a <span class="highlight">segurança viária</span> na comunidade.
@@ -34,7 +49,7 @@
     <div class="page active" data-chart="grafico1">
       <div class="chart-block">
         <div class="page-header">
-          <h1>Acidentes por Faixa Etária</h1>
+          <h1>ACIDENTES POR FAIXA ETÁRIA</h1>
           <p>Distribuição dos acidentes conforme a faixa etária das vítimas.</p>
         </div>
         <main>
@@ -53,7 +68,12 @@
               <button class="toggleSortBtn">⇅ Ordenar</button>
             </div>
             <div class="control-row">
-              <label><input type="checkbox" class="normalizeChk" /> Mostrar % do total</label>
+              <div class="checkbox-container">
+                <label>
+                  <input type="checkbox" class="normalizeChk" />
+                  Mostrar % do total
+                </label>
+              </div>
             </div>
           </aside>
 
@@ -73,7 +93,7 @@
     <div class="page" data-chart="grafico2">
       <div class="chart-block">
         <div class="page-header">
-          <h1>Acidentes por Gênero</h1>
+          <h1>ACIDENTES POR GÊNERO</h1>
           <p>Distribuição dos acidentes conforme o gênero das vítimas.</p>
         </div>
         <main>
@@ -92,7 +112,12 @@
               <button class="toggleSortBtn">⇅ Ordenar</button>
             </div>
             <div class="control-row">
-              <label><input type="checkbox" class="normalizeChk" /> Mostrar % do total</label>
+              <div class="checkbox-container">
+                <label>
+                  <input type="checkbox" class="normalizeChk" />
+                  Mostrar % do total
+                </label>
+              </div>
             </div>
           </aside>
 
@@ -112,8 +137,8 @@
     <div class="page" data-chart="grafico3">
       <div class="chart-block">
         <div class="page-header">
-          <h1>Acidentes por Tipo</h1>
-          <p>Distribuição dos acidentes conforme o tipo de ocorrência.</p>
+          <h1>ACIDENTES POR CATEGORIA</h1>
+          <p>Distribuição dos acidentes conforme o número por categoria.</p>
         </div>
         <main>
           <aside class="panel">
@@ -131,7 +156,12 @@
               <button class="toggleSortBtn">⇅ Ordenar</button>
             </div>
             <div class="control-row">
-              <label><input type="checkbox" class="normalizeChk" /> Mostrar % do total</label>
+              <div class="checkbox-container">
+                <label>
+                  <input type="checkbox" class="normalizeChk" />
+                  Mostrar % do total
+                </label>
+              </div>
             </div>
           </aside>
 
@@ -151,8 +181,8 @@
     <div class="page" data-chart="grafico4">
       <div class="chart-block">
         <div class="page-header">
-          <h1>Acidentes por Tipo</h1>
-          <p>Distribuição dos acidentes conforme o tipo de ocorrência.</p>
+          <h1>ACIDENTES POR DESTINO</h1>
+          <p>Distribuição dos acidentes conforme o destino dado à vitima</p>
         </div>
         <main>
           <aside class="panel">
@@ -170,7 +200,12 @@
               <button class="toggleSortBtn">⇅ Ordenar</button>
             </div>
             <div class="control-row">
-              <label><input type="checkbox" class="normalizeChk" /> Mostrar % do total</label>
+              <div class="checkbox-container">
+                <label>
+                  <input type="checkbox" class="normalizeChk" />
+                  Mostrar % do total
+                </label>
+              </div>
             </div>
           </aside>
 
@@ -190,8 +225,8 @@
     <div class="page" data-chart="grafico5">
       <div class="chart-block">
         <div class="page-header">
-          <h1>Acidentes por Tipo</h1>
-          <p>Distribuição dos acidentes conforme o tipo de ocorrência.</p>
+          <h1>ACIDENTES POR HORÁRIO</h1>
+          <p>Distribuição dos acidentes conforme o horário registrado na ocorrência.</p>
         </div>
         <main>
           <aside class="panel">
@@ -209,7 +244,12 @@
               <button class="toggleSortBtn">⇅ Ordenar</button>
             </div>
             <div class="control-row">
-              <label><input type="checkbox" class="normalizeChk" /> Mostrar % do total</label>
+              <div class="checkbox-container">
+                <label>
+                  <input type="checkbox" class="normalizeChk" />
+                  Mostrar % do total
+                </label>
+              </div>
             </div>
           </aside>
 
@@ -229,8 +269,8 @@
     <div class="page" data-chart="grafico6">
       <div class="chart-block">
         <div class="page-header">
-          <h1>Acidentes por Tipo</h1>
-          <p>Distribuição dos acidentes conforme o tipo de ocorrência.</p>
+          <h1>ACIDENTES POR PERÍODO</h1>
+          <p>Distribuição dos acidentes conforme o mês registrado na ocorrência.</p>
         </div>
         <main>
           <aside class="panel">
@@ -248,7 +288,12 @@
               <button class="toggleSortBtn">⇅ Ordenar</button>
             </div>
             <div class="control-row">
-              <label><input type="checkbox" class="normalizeChk" /> Mostrar % do total</label>
+              <div class="checkbox-container">
+                <label>
+                  <input type="checkbox" class="normalizeChk" />
+                  Mostrar % do total
+                </label>
+              </div>
             </div>
           </aside>
 
