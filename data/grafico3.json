@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fonte": "Pesquisa de campo em Iporá (GO) - 2025"
+    "fonte": "Projeto de Extensão: Tecnologia e Educação para um Trânsito Mais Seguro, Instituto Federal Goiano - Campus Iporá."
   },
   "tipos": [
     { "tipo": "Colisão moto", "valor": 228 },
@@ -11,5 +11,4 @@
     { "tipo": "Atropelamento carro", "valor": 5 },
     { "tipo": "Colisão genérica", "valor": 1 }
   ]
-
 }
