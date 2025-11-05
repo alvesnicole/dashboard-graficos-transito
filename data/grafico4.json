@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fonte": "Pesquisa de campo em Iporá (GO) - 2025"
+    "fonte": "Projeto de Extensão: Tecnologia e Educação para um Trânsito Mais Seguro, Instituto Federal Goiano - Campus Iporá."
   },
   "destinos": [
     { "destino": "Entregue no hospital", "valor": 412 },
@@ -10,8 +10,6 @@
     { "destino": "Recusou atendimento", "valor": 8 },
     { "destino": "Vítima não localizada", "valor": 4 },
     { "destino": "Realizado orientação", "valor": 2 },
-    { "destino": "Em branco", "valor": 2 },
-    { "destino": "Outros", "valor": 57 }
+    { "destino": "Outros", "valor": 59 }
   ]
-
 }
