@@ -208,7 +208,7 @@ header {
 
 /* Título quando minimizado - mantém o estilo do highlight */
 .intro-block.minimized::before {
-  content: "Tecnologia e Educação para um Trânsito Mais Seguro";
+  content: "Saiba mais sobre o Projeto de extensão:";
   color: var(--accent);
   font-weight: 600;
   font-size: 1.2rem;
@@ -715,3 +715,4 @@ footer {
     min-height: 48px;
   }
 }
+
