@@ -66,8 +66,45 @@ header {
   }
 }
 
-/* Bloco de introdução aprimorado */
+/* Botão de minimização do intro-block */
 .intro-block {
+  position: relative;
+  transition: all 0.4s ease;
+}
+
+.minimize-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 36px;
+  height: 36px;
+  background: rgba(100, 255, 218, 0.1);
+  border: 1px solid var(--accent);
+  border-radius: 50%;
+  color: var(--accent);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.minimize-btn:hover {
+  background: rgba(100, 255, 218, 0.2);
+  transform: scale(1.1);
+}
+
+.minimize-btn:active {
+  transform: scale(0.95);
+}
+
+/* Botão de minimização do intro-block */
+.intro-block {
+  position: relative;
+  transition: all 0.4s ease;
   background: #1a1a1a;
   color: #ddd;
   padding: 50px 80px;
@@ -81,16 +118,107 @@ header {
   text-align: justify;
 }
 
-.intro-block h2 {
-  text-align: center;
+.minimize-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 36px;
+  height: 36px;
+  background: rgba(100, 255, 218, 0.1);
+  border: 1px solid var(--accent);
+  border-radius: 50%;
   color: var(--accent);
-  font-size: 1.8rem;
-  margin-bottom: 28px;
-  letter-spacing: 0.5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  z-index: 10;
 }
 
-.intro-block p {
-  margin-bottom: 18px;
+.minimize-btn:hover {
+  background: rgba(100, 255, 218, 0.2);
+  transform: scale(1.1);
+}
+
+.minimize-btn:active {
+  transform: scale(0.95);
+}
+
+/* Botão de minimização do intro-block */
+.intro-block {
+  position: relative;
+  transition: all 0.4s ease;
+}
+
+.minimize-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 36px;
+  height: 36px;
+  background: rgba(100, 255, 218, 0.1);
+  border: 1px solid var(--accent);
+  border-radius: 50%;
+  color: var(--accent);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.minimize-btn:hover {
+  background: rgba(100, 255, 218, 0.2);
+  transform: scale(1.1);
+}
+
+.minimize-btn:active {
+  transform: scale(0.95);
+}
+
+/* Estado minimizado - mantém TODA a formatação original */
+.intro-block.minimized {
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 30px 80px; /* Mantém o padding lateral original */
+}
+
+.intro-block.minimized p {
+  display: none !important; /* Esconde os parágrafos */
+}
+
+.intro-block.minimized .minimize-btn {
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+}
+
+.intro-block.minimized .minimize-btn:hover {
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* Título quando minimizado - mantém o estilo do highlight */
+.intro-block.minimized::before {
+  content: "Tecnologia e Educação para um Trânsito Mais Seguro";
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+/* Garante que os highlights e links mantenham o estilo quando visíveis */
+.intro-block .highlight {
+  color: var(--accent);
+  font-weight: 600;
 }
 
 .intro-block p a {
@@ -107,25 +235,6 @@ header {
   border-bottom: 2px solid var(--accent);
   background-color: rgba(38, 212, 224, 0.1);
 }
-
-.intro-block p a:active {
-  color: var(--accent);
-  border-bottom: 2px solid var(--accent);
-  transform: translateY(1px);
-}
-.intro-block .highlight {
-  color: var(--accent);
-  font-weight: 600;
-}
-
-/* Ajuste sutil de destaque ao passar o mouse */
-.intro-block:hover {
-  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.45);
-  transform: translateY(-2px);
-  transition: all 0.3s ease;
-}
-
-
 /* Página individual */
 #dashboardContainer {
   position: relative;
