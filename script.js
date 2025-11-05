@@ -324,7 +324,7 @@ async function fetchAndUpdate(chartId) {
     const json = await res.json();
 
     chartState.rawData = json;
-    metaInfo.textContent = `Fonte: ${json.meta.fonte} — atualizado: ${new Date(json.meta.atualizadoEm).toLocaleString()}`;
+    metaInfo.textContent = `Fonte: ${json.meta.fonte}`;
     footerText.textContent = `Fonte: ${json.meta.fonte}`;
     
 if (chartId === "grafico6") {
@@ -561,3 +561,21 @@ setInterval(() => {
     fetchAndUpdate(currentChartId);
   }
 }, AUTO_REFRESH_MS);
+
+// Oculta as setas até o gráfico estar pronto
+const arrowLeft = document.getElementById("prevPage");
+const arrowRight = document.getElementById("nextPage");
+
+// Deixa invisível durante o carregamento
+arrowLeft.style.visibility = "hidden";
+arrowRight.style.visibility = "hidden";
+
+// Aguarda a renderização do gráfico antes de exibir as setas
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    arrowLeft.style.visibility = "visible";
+    arrowRight.style.visibility = "visible";
+  }, 150); // tempo suficiente para evitar o piscar inicial
+});
+
+
