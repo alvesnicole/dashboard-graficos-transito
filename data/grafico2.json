@@ -1,12 +1,10 @@
 {
   "meta": {
-    "fonte": "Pesquisa de campo em Iporá (GO) - 2025"
+    "fonte": "Projeto de Extensão: Tecnologia e Educação para um Trânsito Mais Seguro, Instituto Federal Goiano - Campus Iporá."
   },
   "sexo": [
     { "sexo": "Masculino", "valor": 301 },
     { "sexo": "Feminino", "valor": 193 },
     { "sexo": "Não identificado", "valor": 21 }
   ]
-
 }
-
