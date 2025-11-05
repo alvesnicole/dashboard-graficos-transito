@@ -544,8 +544,7 @@ function initializeAllCharts() {
     fetchAndUpdate(currentChartId);
   }
   
-  // Remove completamente o pré-carregamento automático dos outros gráficos
-  // Eles serão carregados apenas quando o usuário navegar para aquela página
+
 }
 
 // Inicialização quando a página carrega
@@ -562,20 +561,43 @@ setInterval(() => {
   }
 }, AUTO_REFRESH_MS);
 
-// Oculta as setas até o gráfico estar pronto
 const arrowLeft = document.getElementById("prevPage");
 const arrowRight = document.getElementById("nextPage");
 
-// Deixa invisível durante o carregamento
 arrowLeft.style.visibility = "hidden";
 arrowRight.style.visibility = "hidden";
 
-// Aguarda a renderização do gráfico antes de exibir as setas
 window.addEventListener("load", () => {
   setTimeout(() => {
     arrowLeft.style.visibility = "visible";
     arrowRight.style.visibility = "visible";
-  }, 150); // tempo suficiente para evitar o piscar inicial
+  }, 150);
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+  const introBlock = document.querySelector('.intro-block');
+
+  if (!introBlock.querySelector('.minimize-btn')) {
+    const minimizeBtn = document.createElement('button');
+    minimizeBtn.className = 'minimize-btn';
+    minimizeBtn.innerHTML = '−';
+    minimizeBtn.title = 'Minimizar/Maximizar';
+    
+    introBlock.appendChild(minimizeBtn);
+
+    minimizeBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      introBlock.classList.toggle('minimized');
+      minimizeBtn.innerHTML = introBlock.classList.contains('minimized') ? '+' : '−';
+    });
+
+
+    introBlock.addEventListener('click', function(e) {
+      if (introBlock.classList.contains('minimized') && e.target !== minimizeBtn) {
+        introBlock.classList.remove('minimized');
+        minimizeBtn.innerHTML = '−';
+      }
+    });
+  }
+});
 
