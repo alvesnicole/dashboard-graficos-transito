@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fonte": "Pesquisa de campo em Iporá (GO) - 2025"
+    "fonte": "Projeto de Extensão: Tecnologia e Educação para um Trânsito Mais Seguro, Instituto Federal Goiano - Campus Iporá."
   },
   "ocorrenciasPorHorario": [
     { "hora": 0, "numeroDeAcidentes": 7 },
@@ -29,4 +29,3 @@
     { "hora": 23, "numeroDeAcidentes": 18 }
   ]
 }
-
