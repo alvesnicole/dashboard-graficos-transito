@@ -386,7 +386,7 @@ footer {
   opacity: 0.7;
 }
 
-/* quando as setas estiverem dentro do chart-block elas usarão esse posicionamento */
+/* BOTÕES SEMPRE NAS LATERAIS - POSICIONAMENTO FIXO */
 .chart-block .nav-btn {
   position: absolute !important;
   top: 50%;
@@ -395,6 +395,7 @@ footer {
   width: 48px;
   height: 48px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+  /* Posicionamento fixo nas laterais */
 }
 
 .chart-block .nav-btn.left {
@@ -632,10 +633,14 @@ footer {
     min-height: 80px;
   }
 
+  /* BOTÕES MANTIDOS NAS LATERAIS EM MOBILE - TAMANHO REDUZIDO */
   .chart-block .nav-btn {
     width: 42px;
     height: 42px;
     font-size: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    /* Mantém posição lateral mesmo em mobile */
   }
 
   .chart-block .nav-btn.left {
@@ -672,10 +677,14 @@ footer {
     margin: 20px auto;
   }
 
+  /* BOTÕES MANTIDOS NAS LATERAIS EM SMARTPHONES PEQUENOS */
   .chart-block .nav-btn {
     width: 38px;
     height: 38px;
     font-size: 1.3rem;
+    top: 50%;
+    transform: translateY(-50%);
+    /* Mantém posição lateral mesmo em smartphones pequenos */
   }
 
   .chart-block .nav-btn.left {
@@ -684,6 +693,23 @@ footer {
 
   .chart-block .nav-btn.right {
     right: -15px;
+  }
+}
+
+/* Para telas extremamente pequenas (menos de 360px) */
+@media (max-width: 360px) {
+  .chart-block .nav-btn {
+    width: 34px;
+    height: 34px;
+    font-size: 1.1rem;
+  }
+
+  .chart-block .nav-btn.left {
+    left: -12px;
+  }
+
+  .chart-block .nav-btn.right {
+    right: -12px;
   }
 }
 
@@ -698,15 +724,5 @@ footer {
   }
 }
 
-/* pequena adaptação para telas pequenas: posiciona as setas junto ao rodapé do chart-block */
-@media (max-width: 800px) {
-  .chart-block .nav-btn {
-    top: auto;
-    bottom: 12px;
-    transform: none;
-    width: 42px;
-    height: 42px;
-  }
-  .chart-block .nav-btn.left { left: 12px; }
-  .chart-block .nav-btn.right { right: 12px; }
-}
+/* REMOVIDA a regra que posicionava botões no rodapé em telas pequenas */
+/* Os botões agora SEMPRE ficam nas laterais, centralizados verticalmente */
