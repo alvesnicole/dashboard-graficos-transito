@@ -17,8 +17,7 @@ body {
   color: var(--muted);
   overflow-x: hidden;
   height: auto;
-  height: auto;
-  overflow-y: auto; /* SCROLL GERAL NO BODY */
+  overflow-y: auto;
 }
 
 /* Cabeçalho com imagem no canto superior direito */
@@ -28,7 +27,7 @@ header {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   text-align: left;
   color: var(--accent);
-  position: relative; /* Para posicionar a imagem absolutamente dentro */
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -42,63 +41,15 @@ header {
   position: absolute;
   top: 20px;
   right: 90px;
-  width: 77px; /* Ajuste conforme necessário */
+  width: 77px;
   height: auto;
-  z-index: 10; /* Para ficar na frente do título */
+  z-index: 10;
 }
 
 .header-image img {
   width: 90%;
   height: auto;
-  border-radius: 4px; /* Opcional: bordas arredondadas */
-}
-
-/* Para telas menores */
-@media (max-width: 768px) {
-  .header-image {
-    width: 60px;
-    top: 15px;
-    right: 15px;
-  }
-  
-  header {
-    padding: 15px;
-  }
-}
-
-/* Botão de minimização do intro-block */
-.intro-block {
-  position: relative;
-  transition: all 0.4s ease;
-}
-
-.minimize-btn {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 36px;
-  height: 36px;
-  background: rgba(100, 255, 218, 0.1);
-  border: 1px solid var(--accent);
-  border-radius: 50%;
-  color: var(--accent);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.1rem;
-  font-weight: bold;
-  transition: all 0.3s ease;
-  z-index: 10;
-}
-
-.minimize-btn:hover {
-  background: rgba(100, 255, 218, 0.2);
-  transform: scale(1.1);
-}
-
-.minimize-btn:active {
-  transform: scale(0.95);
+  border-radius: 4px;
 }
 
 /* Botão de minimização do intro-block */
@@ -147,53 +98,18 @@ header {
   transform: scale(0.95);
 }
 
-/* Botão de minimização do intro-block */
-.intro-block {
-  position: relative;
-  transition: all 0.4s ease;
-}
-
-.minimize-btn {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 36px;
-  height: 36px;
-  background: rgba(100, 255, 218, 0.1);
-  border: 1px solid var(--accent);
-  border-radius: 50%;
-  color: var(--accent);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.1rem;
-  font-weight: bold;
-  transition: all 0.3s ease;
-  z-index: 10;
-}
-
-.minimize-btn:hover {
-  background: rgba(100, 255, 218, 0.2);
-  transform: scale(1.1);
-}
-
-.minimize-btn:active {
-  transform: scale(0.95);
-}
-
-/* Estado minimizado - mantém TODA a formatação original */
+/* Estado minimizado */
 .intro-block.minimized {
   min-height: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  padding: 30px 80px; /* Mantém o padding lateral original */
+  padding: 30px 80px;
 }
 
 .intro-block.minimized p {
-  display: none !important; /* Esconde os parágrafos */
+  display: none !important;
 }
 
 .intro-block.minimized .minimize-btn {
@@ -206,7 +122,6 @@ header {
   transform: translateY(-50%) scale(1.1);
 }
 
-/* Título quando minimizado - mantém o estilo do highlight */
 .intro-block.minimized::before {
   content: "Saiba mais sobre o Projeto de extensão:";
   color: var(--accent);
@@ -235,13 +150,14 @@ header {
   border-bottom: 2px solid var(--accent);
   background-color: rgba(38, 212, 224, 0.1);
 }
+
 /* Página individual */
 #dashboardContainer {
   position: relative;
   overflow: hidden;
   width: 100%;
   height: auto;
-  min-height: 100vh; /* Ocupa toda a viewport */
+  min-height: 100vh;
 }
 
 /* Páginas com altura automática e padding inferior */
@@ -250,15 +166,15 @@ header {
   top: 0;
   left: 100%;
   width: 100%;
-  height: auto; /* Alterado de 100vh para auto */
-  min-height: 100vh; /* Garante altura mínima */ /* Altura total da viewport */
+  height: auto;
+  min-height: 100vh;
   opacity: 0;
   transition: all 0.8s ease;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding: 20px 0; /* Espaço para respiro */
+  padding: 20px 0;
 }
 
 .page main {
@@ -267,10 +183,9 @@ header {
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
-  flex: 0 0 auto; /* Não cresce, altura baseada no conteúdo */
+  flex: 0 0 auto;
   min-height: auto;
 }
-
 
 .page.active {
   left: 0;
@@ -310,6 +225,7 @@ header {
   scrollbar-width: thin;
   scrollbar-color: #555 transparent;
 }
+
 main {
   display: flex;
   gap: 20px;
@@ -352,20 +268,19 @@ main {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  min-height: 500px; /* Altura mínima */
+  min-height: 500px;
 }
-
 
 .chart-wrap {
   background: var(--panel);
   padding: 20px;
   border-radius: var(--radius);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-  height: 450px; /* Altura fixa */
+  height: 450px;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0; /* Não reduz altura */
+  flex-shrink: 0;
 }
 
 .chart-block {
@@ -373,12 +288,14 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 20px; /* espaço entre título e gráfico */
+  gap: 20px;
   background: rgba(255,255,255,0.05);
   border-radius: 12px;
   padding: 30px 30px;
   width: 70%;
   box-sizing: border-box;
+  position: relative;
+  min-height: 600px;
 }
 
 canvas {
@@ -399,7 +316,7 @@ canvas {
 }
 
 .page footer {
-  margin-top: auto; /* Empurra para baixo */
+  margin-top: auto;
   padding: 20px;
   text-align: center;
   color: #888;
@@ -414,7 +331,7 @@ footer {
 
 /* Botões de navegação */
 .nav-btn {
-  position: absolute ;
+  position: absolute;
   top: 50%;
   transform: translateY(-50%);
   background: var(--accent);
@@ -426,9 +343,8 @@ footer {
   cursor: pointer;
   font-size: 1.8rem;
   transition: 0.3s;
-  z-index: 100; /* Aumentado para ficar acima de tudo */
+  z-index: 100;
 }
-
 
 .nav-btn:hover {
   background: #fff;
@@ -470,21 +386,6 @@ footer {
   opacity: 0.7;
 }
 
-.chart-block {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  background: rgba(255,255,255,0.05);
-  border-radius: 12px;
-  padding: 30px 30px;
-  width: 70%;
-  box-sizing: border-box;
-  position: relative;
-  min-height: 600px; /* Altura mínima consistente para todos os gráficos */
-}
-
 /* quando as setas estiverem dentro do chart-block elas usarão esse posicionamento */
 .chart-block .nav-btn {
   position: absolute !important;
@@ -496,26 +397,12 @@ footer {
   box-shadow: 0 6px 18px rgba(0,0,0,0.35);
 }
 
-/* deslocamento lateral para ficarem ligeiramente fora do bloco (ajuste conforme desejar) */
 .chart-block .nav-btn.left {
-  left: -28px; /* seta esquerda fica um pouco fora do bloco */
+  left: -28px;
 }
 
 .chart-block .nav-btn.right {
-  right: -28px; /* seta direita fica um pouco fora do bloco */
-}
-
-/* pequena adaptação para telas pequenas: posiciona as setas junto ao rodapé do chart-block */
-@media (max-width: 800px) {
-  .chart-block .nav-btn {
-    top: auto;
-    bottom: 12px;
-    transform: none;
-    width: 42px;
-    height: 42px;
-  }
-  .chart-block .nav-btn.left { left: 12px; }
-  .chart-block .nav-btn.right { right: 12px; }
+  right: -28px;
 }
 
 /* Painel de controles modernizado */
@@ -546,7 +433,7 @@ footer {
   margin-bottom: 4px;
 }
 
-/* Select modernizado - CORRIGIDO */
+/* Select modernizado */
 .control-row select {
   padding: 12px;
   border-radius: 10px;
@@ -575,7 +462,6 @@ footer {
   box-shadow: 0 0 0 2px rgba(100, 255, 218, 0.2);
 }
 
-/* Estilo para as options do select */
 .control-row select option {
   background: #2a2a2a;
   color: #e0e0e0;
@@ -612,7 +498,7 @@ footer {
   box-shadow: 0 2px 6px rgba(100, 255, 218, 0.2);
 }
 
-/* Checkbox modernizado - CENTRALIZADO VERTICALMENTE */
+/* Checkbox modernizado */
 .control-row .checkbox-container {
   display: flex;
   align-items: center;
@@ -624,7 +510,7 @@ footer {
   cursor: pointer;
   transition: all 0.3s ease;
   margin-top: 4px;
-  min-height: 44px; /* Altura mínima para melhor toque */
+  min-height: 44px;
 }
 
 .control-row .checkbox-container:hover {
@@ -678,7 +564,6 @@ footer {
   box-shadow: 0 0 0 2px rgba(100, 255, 218, 0.3);
 }
 
-/* Remove o estilo anterior do label do checkbox */
 .control-row label[for]:has(input[type="checkbox"]) {
   all: unset;
 }
@@ -695,24 +580,133 @@ footer {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Responsividade para telas menores */
+/* Ajustes de responsividade para gráficos em telas pequenas */
 @media (max-width: 768px) {
-  .panel {
-    width: 100%;
-    max-width: 300px;
-    margin: 0 auto;
+  .header-image {
+    width: 60px;
+    top: 15px;
+    right: 15px;
   }
   
+  header {
+    padding: 15px;
+  }
+
+  .chart-block {
+    width: 100% !important;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px 15px;
+    min-height: 500px;
+  }
+
+  .chart-wrap {
+    height: 400px;
+    padding: 15px;
+  }
+
+  canvas {
+    height: 380px !important;
+  }
+
   main {
     flex-direction: column;
+    width: 95%;
+    gap: 15px;
   }
-  
-  .control-row {
-    flex-direction: column;
+
+  .panel {
+    width: 100%;
+    max-width: none;
+    margin: 0 auto;
   }
-  
+
+  .intro-block {
+    width: 95%;
+    padding: 30px 20px;
+    margin: 30px auto;
+  }
+
+  .intro-block.minimized {
+    padding: 25px 20px;
+    min-height: 80px;
+  }
+
+  .chart-block .nav-btn {
+    width: 42px;
+    height: 42px;
+    font-size: 1.5rem;
+  }
+
+  .chart-block .nav-btn.left {
+    left: -20px;
+  }
+
+  .chart-block .nav-btn.right {
+    right: -20px;
+  }
+
   .control-row .checkbox-container {
     min-height: 48px;
   }
 }
 
+/* Para telas muito pequenas (smartphones pequenos) */
+@media (max-width: 480px) {
+  .chart-block {
+    padding: 15px 10px;
+    min-height: 450px;
+  }
+
+  .chart-wrap {
+    height: 350px;
+    padding: 10px;
+  }
+
+  canvas {
+    height: 330px !important;
+  }
+
+  .intro-block {
+    padding: 25px 15px;
+    margin: 20px auto;
+  }
+
+  .chart-block .nav-btn {
+    width: 38px;
+    height: 38px;
+    font-size: 1.3rem;
+  }
+
+  .chart-block .nav-btn.left {
+    left: -15px;
+  }
+
+  .chart-block .nav-btn.right {
+    right: -15px;
+  }
+}
+
+/* Para telas entre tablet e desktop pequeno */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .chart-block {
+    width: 85%;
+  }
+
+  main {
+    width: 95%;
+  }
+}
+
+/* pequena adaptação para telas pequenas: posiciona as setas junto ao rodapé do chart-block */
+@media (max-width: 800px) {
+  .chart-block .nav-btn {
+    top: auto;
+    bottom: 12px;
+    transform: none;
+    width: 42px;
+    height: 42px;
+  }
+  .chart-block .nav-btn.left { left: 12px; }
+  .chart-block .nav-btn.right { right: 12px; }
+}
