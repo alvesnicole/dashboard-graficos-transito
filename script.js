@@ -1,11 +1,10 @@
-// PAGINAÇÃO
+// ================== PAGINAÇÃO ==================
 const pages = document.querySelectorAll(".page");
 let currentPage = 0;
 const prevBtn = document.getElementById("prevPage");
 const nextBtn = document.getElementById("nextPage");
 
 
-// move os botões #prevPage e #nextPage para dentro do .chart-block da página ativa
 function moveNavButtonsToChartBlock() {
   const prevBtn = document.getElementById("prevPage");
   const nextBtn = document.getElementById("nextPage");
@@ -15,17 +14,14 @@ function moveNavButtonsToChartBlock() {
   const chartBlock = activePage.querySelector(".chart-block") || activePage.querySelector(".chart-wrap") || activePage;
   if (!chartBlock) return;
 
-  // Se já estiverem no lugar, não faz nada
   if (chartBlock.contains(prevBtn) && chartBlock.contains(nextBtn)) return;
 
-  // Anexa os botões ao chartBlock (preserva IDs e listeners originais)
-  // Append em ordem para manter layout: prev à esquerda, next à direita
   chartBlock.appendChild(prevBtn);
   chartBlock.appendChild(nextBtn);
 }
 
 function showPage(index) {
-  // Atualiza currentPage ANTES de fazer qualquer transição
+
   currentPage = index;
   
   pages.forEach((p, i) => {
@@ -34,21 +30,17 @@ function showPage(index) {
   });
   pages[index].classList.add("active");
   pages[index].style.left = "0";
-  
-  // Atualiza o gráfico da página atual
+
   updateCurrentChart();
 
-  // MOVE as setas para o chart-block da página ativa
   moveNavButtonsToChartBlock();
 }
 
-// garante que, ao carregar a página, os botões vão pro primeiro chart-block
 document.addEventListener("DOMContentLoaded", () => {
-  // se já existir página ativa, força mover as setas
+
   moveNavButtonsToChartBlock();
 });
 
-// ajusta posição se o usuário redimensionar a janela (mantém o vínculo)
 window.addEventListener("resize", () => {
   moveNavButtonsToChartBlock();
 });
@@ -80,7 +72,6 @@ function colorForLabel(index) {
 
 const AUTO_REFRESH_MS = 8000;
 
-// Configuração dos gráficos
 const chartConfigs = {
   "grafico1": {
     dataUrl: "data/grafico1.json",
@@ -120,10 +111,8 @@ const chartConfigs = {
   }
 };
 
-// Estado dos gráficos
 const chartStates = {};
 
-// Inicializa estados
 Object.keys(chartConfigs).forEach(chartId => {
   chartStates[chartId] = {
     rawData: null,
@@ -171,9 +160,7 @@ function buildLegend(container, labels, colors, rawValues) {
   container.style.display = "grid";
   container.style.gridTemplateColumns = "repeat(auto-fill, minmax(180px, 1fr))";
   container.style.gap = "12px";
-  /* REMOVIDO: max-height e overflow-y */
 
-  // Resto do código permanece igual...
   labels.forEach((lab, i) => {
     const box = document.createElement("div");
     box.style.display = "flex";
@@ -217,7 +204,6 @@ function renderChart(type, prepared, animate = true) {
   const colors = prepared.labels.map((_, i) => colorForLabel(i));
   const borderColor = "#a0ffef";
 
-  // Configuração base
   const commonOptions = {
     responsive: true,
     maintainAspectRatio: false,
@@ -232,8 +218,7 @@ function renderChart(type, prepared, animate = true) {
     }
   };
 
-  
-  // Se for gráfico radar → aplicar estilo diferenciado
+
   if (type === "radar") {
     chartState.chartInstance = new Chart(ctx, {
       type: "radar",
@@ -242,14 +227,14 @@ function renderChart(type, prepared, animate = true) {
         datasets: [{
           label: normalizeChk.checked ? "% do total" : "Número de Acidentes",
           data: prepared.values,
-          backgroundColor: "rgba(120, 120, 120, 0.4)", // 25% de opacidade
-          borderColor: "rgba(63, 63, 63, 1)", // Usa as cores da legenda para as bordas
+          backgroundColor: "rgba(120, 120, 120, 0.4)", 
+          borderColor: "rgba(63, 63, 63, 1)", 
           borderWidth: 2,
-          pointBackgroundColor: colors, // Pontos com as mesmas cores da legenda
+          pointBackgroundColor: colors, 
           pointBorderColor: "#ffffff",
           pointRadius: 6,
           pointHoverRadius: 8,
-          pointHoverBackgroundColor: colors.map(color => color + "CC"), // 80% de opacidade no hover
+          pointHoverBackgroundColor: colors.map(color => color + "CC"), 
           pointHoverBorderColor: "#ffffff",
           pointBorderWidth: 2,
         }]
@@ -278,7 +263,7 @@ function renderChart(type, prepared, animate = true) {
       }
     });
   } else {
-    // Outros tipos de gráfico (barras, pizza etc.)
+
     chartState.chartInstance = new Chart(ctx, {
       type: (type === "horizontalBar") ? "bar" : type,
       data: {
@@ -384,7 +369,6 @@ if (chartId === "grafico6") {
     }
   };
 
-  // Tipos de gráfico compatíveis
   const typeMap = {
     bar: "bar",
     horizontalBar: "bar",
@@ -393,7 +377,6 @@ if (chartId === "grafico6") {
     radar: "radar"
   };
 
-  // Ajuste para barras horizontais
   if (chartType === "horizontalBar") {
     commonOptions.indexAxis = "y";
   }
@@ -439,7 +422,6 @@ if (chartId === "grafico6") {
   
   chartState.firstRender = false;
 
-  // Atualiza legenda
   const legendContainer = currentPageElement.querySelector(".legend-container");
   legendContainer.innerHTML = "";
   prepared.datasets.forEach((ds, i) => {
@@ -468,11 +450,10 @@ if (chartId === "grafico6") {
     legendContainer.appendChild(box);
   });
 
-  return; // impede que a lógica dos outros gráficos execute
+  return; 
 }
 
 
-    // 🔹 Demais gráficos (mantém a lógica existente)
     let dataArr = json[config.dataKey].map(x => ({
       [config.labelKey]: x[config.labelKey],
       [config.valueKey]: Number(x[config.valueKey])
@@ -503,7 +484,6 @@ function updateCurrentChart() {
   }
 }
 
-// Configura os event listeners para cada página
 function setupPageListeners() {
   pages.forEach(page => {
     const chartId = page.getAttribute("data-chart");
@@ -536,9 +516,7 @@ function setupPageListeners() {
   });
 }
 
-// Inicializa todos os gráficos
 function initializeAllCharts() {
-  // Carrega APENAS o gráfico da primeira página inicialmente
   const currentChartId = getCurrentChartId();
   if (currentChartId && chartConfigs[currentChartId]) {
     fetchAndUpdate(currentChartId);
@@ -547,13 +525,11 @@ function initializeAllCharts() {
 
 }
 
-// Inicialização quando a página carrega
 document.addEventListener('DOMContentLoaded', function() {
   setupPageListeners();
   initializeAllCharts();
 });
 
-// Atualização automática apenas do gráfico atual
 setInterval(() => {
   const currentChartId = getCurrentChartId();
   if (currentChartId && chartConfigs[currentChartId]) {
@@ -600,4 +576,5 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+
 
