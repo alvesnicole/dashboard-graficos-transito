@@ -20,7 +20,6 @@ body {
   overflow-y: auto;
 }
 
-/* Cabeçalho com imagem no canto superior direito */
 header {
   background: #181818;
   padding: 25px 65px;
@@ -52,7 +51,6 @@ header {
   border-radius: 4px;
 }
 
-/* Botão de minimização do intro-block */
 .intro-block {
   position: relative;
   transition: all 0.4s ease;
@@ -98,7 +96,6 @@ header {
   transform: scale(0.95);
 }
 
-/* Estado minimizado */
 .intro-block.minimized {
   min-height: 100px;
   display: flex;
@@ -130,7 +127,6 @@ header {
   text-align: center;
 }
 
-/* Garante que os highlights e links mantenham o estilo quando visíveis */
 .intro-block .highlight {
   color: var(--accent);
   font-weight: 600;
@@ -151,7 +147,6 @@ header {
   background-color: rgba(38, 212, 224, 0.1);
 }
 
-/* Página individual */
 #dashboardContainer {
   position: relative;
   overflow: hidden;
@@ -160,7 +155,6 @@ header {
   min-height: 100vh;
 }
 
-/* Páginas com altura automática e padding inferior */
 .page {
   position: absolute;
   top: 0;
@@ -202,7 +196,6 @@ header {
   color: var(--accent);
 }
 
-/* Scroll minimalista */
 .page::-webkit-scrollbar {
   width: 8px;
 }
@@ -220,7 +213,6 @@ header {
   background: #777;
 }
 
-/* Firefox */
 .page {
   scrollbar-width: thin;
   scrollbar-color: #555 transparent;
@@ -329,7 +321,6 @@ footer {
   color: #888;
 }
 
-/* Botões de navegação */
 .nav-btn {
   position: absolute;
   top: 50%;
@@ -358,7 +349,6 @@ footer {
   right: 20px;
 }
 
-/* Estados de carregamento e erro */
 .loading-state {
   display: flex;
   align-items: center;
@@ -377,7 +367,6 @@ footer {
   font-size: 14px;
 }
 
-/* Melhorias para evitar flickering */
 .chartCanvas {
   transition: opacity 0.3s ease;
 }
@@ -386,7 +375,7 @@ footer {
   opacity: 0.7;
 }
 
-/* BOTÕES SEMPRE NAS LATERAIS - POSICIONAMENTO FIXO */
+/* BOTÕES DENTRO DO CHART-BLOCK - CORRIGIDO PARA TELAS PEQUENAS */
 .chart-block .nav-btn {
   position: absolute !important;
   top: 50%;
@@ -395,18 +384,16 @@ footer {
   width: 48px;
   height: 48px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.35);
-  /* Posicionamento fixo nas laterais */
 }
 
 .chart-block .nav-btn.left {
-  left: -28px;
+  left: 10px; /* Dentro do chart-block em vez de fora */
 }
 
 .chart-block .nav-btn.right {
-  right: -28px;
+  right: 10px; /* Dentro do chart-block em vez de fora */
 }
 
-/* Painel de controles modernizado */
 .panel {
   width: 260px;
   background: linear-gradient(145deg, #252525, #1a1a1a);
@@ -434,7 +421,6 @@ footer {
   margin-bottom: 4px;
 }
 
-/* Select modernizado */
 .control-row select {
   padding: 12px;
   border-radius: 10px;
@@ -470,7 +456,6 @@ footer {
   border: none;
 }
 
-/* Botão modernizado */
 .control-row button {
   padding: 12px 16px;
   border-radius: 10px;
@@ -499,7 +484,6 @@ footer {
   box-shadow: 0 2px 6px rgba(100, 255, 218, 0.2);
 }
 
-/* Checkbox modernizado */
 .control-row .checkbox-container {
   display: flex;
   align-items: center;
@@ -569,7 +553,6 @@ footer {
   all: unset;
 }
 
-/* Título do painel */
 .panel::before {
   content: "Configurações do Gráfico";
   display: block;
@@ -581,7 +564,6 @@ footer {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Ajustes de responsividade para gráficos em telas pequenas */
 @media (max-width: 768px) {
   .header-image {
     width: 60px;
@@ -633,22 +615,21 @@ footer {
     min-height: 80px;
   }
 
-  /* BOTÕES MANTIDOS NAS LATERAIS EM MOBILE - TAMANHO REDUZIDO */
+  /* BOTÕES DENTRO DO CHART-BLOCK EM MOBILE */
   .chart-block .nav-btn {
     width: 42px;
     height: 42px;
     font-size: 1.5rem;
     top: 50%;
     transform: translateY(-50%);
-    /* Mantém posição lateral mesmo em mobile */
   }
 
   .chart-block .nav-btn.left {
-    left: -20px;
+    left: 8px; /* Dentro do chart-block */
   }
 
   .chart-block .nav-btn.right {
-    right: -20px;
+    right: 8px; /* Dentro do chart-block */
   }
 
   .control-row .checkbox-container {
@@ -656,7 +637,6 @@ footer {
   }
 }
 
-/* Para telas muito pequenas (smartphones pequenos) */
 @media (max-width: 480px) {
   .chart-block {
     padding: 15px 10px;
@@ -677,26 +657,24 @@ footer {
     margin: 20px auto;
   }
 
-  /* BOTÕES MANTIDOS NAS LATERAIS EM SMARTPHONES PEQUENOS */
+  /* BOTÕES AINDA MAIS PRÓXIMOS DAS BORDAS EM SMARTPHONES */
   .chart-block .nav-btn {
     width: 38px;
     height: 38px;
     font-size: 1.3rem;
     top: 50%;
     transform: translateY(-50%);
-    /* Mantém posição lateral mesmo em smartphones pequenos */
   }
 
   .chart-block .nav-btn.left {
-    left: -15px;
+    left: 5px;
   }
 
   .chart-block .nav-btn.right {
-    right: -15px;
+    right: 5px;
   }
 }
 
-/* Para telas extremamente pequenas (menos de 360px) */
 @media (max-width: 360px) {
   .chart-block .nav-btn {
     width: 34px;
@@ -705,15 +683,14 @@ footer {
   }
 
   .chart-block .nav-btn.left {
-    left: -12px;
+    left: 3px;
   }
 
   .chart-block .nav-btn.right {
-    right: -12px;
+    right: 3px;
   }
 }
 
-/* Para telas entre tablet e desktop pequeno */
 @media (min-width: 769px) and (max-width: 1024px) {
   .chart-block {
     width: 85%;
@@ -724,5 +701,13 @@ footer {
   }
 }
 
-/* REMOVIDA a regra que posicionava botões no rodapé em telas pequenas */
-/* Os botões agora SEMPRE ficam nas laterais, centralizados verticalmente */
+/* PARA DESKTOP - BOTÕES FORA DO CHART-BLOCK */
+@media (min-width: 1025px) {
+  .chart-block .nav-btn.left {
+    left: -28px;
+  }
+
+  .chart-block .nav-btn.right {
+    right: -28px;
+  }
+}
