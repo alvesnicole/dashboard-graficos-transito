@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "fonte": "Projeto de Extensão: Tecnologia e Educação para um Trânsito Mais Seguro, Instituto Federal Goiano - Campus Iporá.",
+    "titulo": "Principais Locais de Ocorrência de Acidentes em Iporá"
+  },
+  "locais": [
+    { "local": "Restante da cidade", "valor": 371 },
+    { "local": "Pará", "valor": 40 },
+    { "local": "Jacinto Moreira", "valor": 22 },
+    { "local": "Rio Claro", "valor": 20 },
+    { "local": "Go 060", "valor": 17 },
+    { "local": "Desconhecidos", "valor": 13 },
+    { "local": "Monte Azul", "valor": 9 },
+    { "local": "José Candido Vieira", "valor": 7 },
+    { "local": "XV De Novembro", "valor": 7 },
+    { "local": "Francisco Sales", "valor": 7 },
+    { "local": "Esmerindo Pereira", "valor": 6 }
+  ]
+}
