@@ -297,6 +297,49 @@
         <footer><small class="footerText">Fonte: —</small></footer>
       </div>
     </div>
+
+        <div class="page" data-chart="grafico7">
+      <div class="chart-block">
+        <div class="page-header">
+          <h1>ACIDENTES POR LOCAL</h1>
+          <p>Distribuição dos acidentes conforme o local registrado na ocorrência.</p>
+        </div>
+        <main>
+          <aside class="panel">
+            <div class="control-row">
+              <label for="chartType">Tipo:</label>
+              <select class="chartType">
+                <option value="bar">Barras</option>
+                <option value="horizontalBar">Barras Horizontais</option>
+                <option value="pie">Pizza</option>
+                <option value="doughnut">Donut</option>
+                <option value="radar">Radar</option>
+              </select>
+            </div>
+            <div class="control-row">
+              <button class="toggleSortBtn">⇅ Ordenar</button>
+            </div>
+            <div class="control-row">
+              <div class="checkbox-container">
+                <label>
+                  <input type="checkbox" class="normalizeChk" />
+                  Mostrar % do total
+                </label>
+              </div>
+            </div>
+          </aside>
+
+          <section class="chart-area">
+            <div class="chart-wrap">
+              <canvas class="chartCanvas"></canvas>
+            </div>
+            <div class="legend-container"></div>
+            <p class="metaInfo"></p>
+          </section>
+        </main>
+        <footer><small class="footerText">Fonte: —</small></footer>
+      </div>
+    </div>
   </div>
 
   <button class="nav-btn left" id="prevPage">❮</button>
@@ -305,6 +348,7 @@
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
