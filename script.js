@@ -108,6 +108,12 @@ const chartConfigs = {
     dataKey: "frequenciaPorMesEAno",
     labelKey: "mes", 
     valueKey: "mediaMensal"
+  },
+  "grafico7": {
+    dataUrl: "data/grafico7.json",
+    dataKey: "locais",
+    labelKey: "local", 
+    valueKey: "valor"
   }
 };
 
@@ -576,5 +582,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+
 
 
