@@ -556,32 +556,31 @@ window.addEventListener("load", () => {
   }, 150);
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-  const introBlock = document.querySelector('.intro-block');
+document.addEventListener('DOMContentLoaded', function () {
+  const blocks = document.querySelectorAll('.intro-block, .download-block');
 
-  if (!introBlock.querySelector('.minimize-btn')) {
-    const minimizeBtn = document.createElement('button');
-    minimizeBtn.className = 'minimize-btn';
-    minimizeBtn.innerHTML = '−';
-    minimizeBtn.title = 'Minimizar/Maximizar';
-    
-    introBlock.appendChild(minimizeBtn);
+  blocks.forEach(block => {
+    if (block.querySelector('.minimize-btn')) return;
 
-    minimizeBtn.addEventListener('click', function(e) {
+    const btn = document.createElement('button');
+    btn.className = 'minimize-btn';
+    btn.innerHTML = '−';
+    btn.title = 'Minimizar/Maximizar';
+
+    block.appendChild(btn);
+
+    btn.addEventListener('click', function (e) {
       e.stopPropagation();
-      introBlock.classList.toggle('minimized');
-      minimizeBtn.innerHTML = introBlock.classList.contains('minimized') ? '+' : '−';
+      block.classList.toggle('minimized');
+      btn.innerHTML = block.classList.contains('minimized') ? '+' : '−';
     });
 
-
-    introBlock.addEventListener('click', function(e) {
-      if (introBlock.classList.contains('minimized') && e.target !== minimizeBtn) {
-        introBlock.classList.remove('minimized');
-        minimizeBtn.innerHTML = '−';
+    block.addEventListener('click', function (e) {
+      if (block.classList.contains('minimized') && e.target !== btn) {
+        block.classList.remove('minimized');
+        btn.innerHTML = '−';
       }
     });
-  }
+  });
 });
-
-
 

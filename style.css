@@ -53,7 +53,7 @@ header {
 
 .intro-block {
   position: relative;
-  transition: all 0.4s ease;
+  transition: all 0.8s ease;
   background: #1a1a1a;
   color: #ddd;
   padding: 50px 80px;
@@ -785,4 +785,30 @@ footer {
     width: 100%;
     justify-content: center;
   }
+}
+
+.download-block {
+  position: relative;
+  transition: all 0.8s ease;
+}
+
+.download-block.minimized {
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 30px 60px;
+}
+
+.download-block.minimized .download-content {
+  display: none !important;
+}
+
+.download-block.minimized::before {
+  content: "Baixar/Visualizar relatório do projeto";
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 1.2rem;
+  text-align: center;
 }
